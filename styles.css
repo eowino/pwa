@@ -1,0 +1,133 @@
+body {
+    background-color: #2e2e2e;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #fd980f;
+  }
+  
+  h1 {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3em;
+    margin: 0.25em 0 0;
+  }
+  
+  h2 {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2em;
+    margin: 0.25em 0 1em;
+  }
+  
+  a,
+  a:visited,
+  a:active {
+    color: #ffb24d; 
+  }
+  
+  .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: none;
+  }
+  
+  #page-start {
+    display: block;
+  }
+  
+  #page-start .content {
+    padding: 1em;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  #input-photo {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #input-photo + label {
+    min-width: 260px;
+    font-size: 1.3em;
+    background: #fd980f;
+    color: #000;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  
+  #input-photo:focus + label {
+    outline: 1px dotted #333;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+  
+  .privacy {
+    max-width: 450px;
+    margin: 1em auto;
+  }
+  
+  .more-info {
+    margin-top: 2.5em;
+    font-size: 0.9em;
+  }
+   
+  .centre {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  
+  }
+  
+  .heading {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  
+  .footer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    max-width: 90vw;
+    max-height: calc(100vh - 120px);
+    margin: 0 auto;
+  }
+  
+  #img-save {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  @media (min-width: 700px) {
+    h1 {
+      font-size: 4.8em;
+    }
+    h2 {
+      font-size: 2.5em;
+    }
+  }

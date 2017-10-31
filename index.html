@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Progressive Cobweb App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Caveat+Brush">
+    <script src="/libs/load-image-all.js" defer></script>
+    <script src="/utils.js" defer></script>
+    <script src="/script.js" defer></script>
+    <meta name="theme-color" content="#0099ff" />
+    <link rel="manifest" href="/manifest.json">
+    <script>
+      //This is the "Offline copy of pages" service worker
+    //   if(location.protocol == 'http:') location.protocol = 'https:';
+      //Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
+      if (navigator.serviceWorker.controller) {
+        console.log('[PWA Builder] active service worker found, no need to register')
+      } else {
+        //Register the ServiceWorker
+        navigator.serviceWorker.register('pwabuilder-sw.js', {
+          scope: './'
+        }).then(function(reg) {
+          console.log('Service worker has been registered for scope:'+ reg.scope);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="page-start" class="page">
+      <div class="content">
+        <h1>Progressive Cobweb App</h1>
+        <h2>Add spooky stickers to your photos!</h2>
+        <input id="input-photo" type="file" accept="image/*"/>
+        <label for="input-photo">Choose or take a photo</label>
+        <p class="privacy"><em>Your photos won't be uploaded anywhere and will remain private (unless you choose to share them yourself later!)</em></p>
+        <p class="more-info">This is a starting point for a PWA by the <a href="https://samsunginter.net">@samsunginternet</a> team! Follow the <a href="https://glitch.com/~mozfest-pwa-start">instructions here</a>.</p>
+      </div>      
+    </div>
+    <div id="page-stickers" class="page">
+      <div class="heading">
+        <p>Tap on your photo to add stickers and <a id="btn-done" href="#">tap here when you're done!</a></p>
+      </div>
+      <div id="photo-container" class="main centre">
+      </div>
+      <div class="footer">
+        <p>To change your sticker, see the top of <code>script.js</code></p>
+      </div>
+    </div>
+    <div id="page-result" class="page">
+      <div class="heading">
+        <p>You're done! Tap and hold or right-click on the image to save it.</a></p>
+      </div>
+      <div class="main centre">
+        <img id="img-save"/>
+      </div>
+      <div class="footer">
+        <p>If you like, you could tweet it with the #mozfest hashtag!</p>
+      </div>
+    </div>
+  </body>
+</html>
